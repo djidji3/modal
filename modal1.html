@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Admin Page</title>
+
+</head>
+
+
+<body>
+    <header>
+        <h1>A modalt bemutató oldal </h1>
+    </header>
+
+    <button class="click">
+        Click here to open modal
+    </button>
+
+    <div class="modal">
+        <div class="modal__overlay js-close-modal-trigger" tabindex="-1">
+            <div class="modal__container">
+                <header class="modal__header">
+                    <h2 class="modal__title">
+                        CSSScript.com
+                    </h2>
+                    <button class="modal__close js-close-modal-trigger">
+                        ✕
+                    </button>
+                </header>
+                <main class="modal__content">
+                    <p>
+                        Modal Lorem ipsum dolor sit amet consectetur. Content Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde doloremque odit illo ex, repellendus error ducimus praesentium, dolore vel numquam suscipit, optio sint maxime culpa natus atque nisi.
+                        Voluptatum praesentium Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, animi? porro fugiat quod laborum quos odit ducimus perferendis magni necessitatibus.
+                    </p>
+                </main>
+                <footer class="modal__footer">
+                    <button class="button js-close-modal-trigger modal__close modal-ok">Okey</button>
+                    <button class="button js-close-modal-trigger modal__close modal-cancel">Cancel</button>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="./node_modules/@ohnaka0410/minimal-modal/dist/minimal-modal.js"></script>
+    <script src="./js/main.js"></script>
+
+</body>
+
+</html>

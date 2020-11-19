@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .click {
+            margin: 20px;
+            display: inline-block;
+        }
+        
+        .modal {
+            display: none;
+        }
+        
+        .modal__overlay {
+            background-color: rgba(0, 0, 0, 0.4);
+            display: flex;
+        }
+        /* mobil kijelzo eseten */
+        
+        .modal__container {
+            background-color: #fff;
+            padding: .5rem;
+            border: 3px solid gray;
+            border-radius: 4px;
+            overflow-y: auto;
+            box-sizing: border-box;
+        }
+        /* desktop kijelzo eseten */
+        
+        @media(min-width: 560px) {
+            .modal__container {
+                min-width: 100%;
+            }
+        }
+        
+        .modal__header {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: .5rem;
+        }
+        
+        .modal__close {
+            margin-left: auto;
+            margin-top: -54px;
+        }
+        
+        .modal__content {
+            padding: 3.5rem;
+            margin: 1px;
+        }
+        
+        .modal__footer {
+            padding: .6rem;
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .modal__button-ok {
+            color: white;
+            background-color: green;
+            padding: 5px 17px;
+            border-radius: 1px;
+            margin: 5px;
+        }
+        
+        .modal__button-cancel {
+            color: white;
+            background-color: red;
+            padding: 5px 12px;
+            border-radius: 3px;
+            margin: 5px;
+        }
+        
+        @keyframes modalFadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes modalFadeOut {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+    <title>Modal</title>
+</head>
+
+<body>
+
+    <body>
+        <header>
+            <h1>A modalt bemutató oldal </h1>
+        </header>
+
+        <button class="click">
+            Click here to open modal
+        </button>
+
+        <div class="modal">
+            <div class="modal__overlay">
+                <div class=" modal__container">
+                    <header class="modal__header">
+                        <h2>
+                            CSScript.com
+                        </h2>
+
+                        <button class="modal__close">
+                            X
+                        </button>
+                    </header>
+                    <main class="modal__content">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, libero pariatur! Animi accusamus dolore incidunt. Nisi perspiciatis illum ducimus. Omnis veniam dignissimos quaerat numquam suscipit eius, rem aperiam sint ex aspernatur vitae harum dolorum
+                            dolorem recusandae necessitatibus. Libero, modi autem porro, provident quas reiciendis saepe asperiores ipsa, nemo nostrum dicta.
+                        </p>
+                    </main>
+
+                    <footer class="modal__footer">
+                        <button class="modal__button-ok modal__close">Okey</button>
+                        <button class="modal__button-cancel modal__close">Cancel</button>
+                    </footer>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            /* Modal megnyitas */
+            let clickButton = document.querySelector('.click');
+            clickButton.addEventListener('click', () => {
+                const modal = document.querySelector('.modal');
+                document.body.style.backgroundColor = 'gray';
+                modal.style.display = 'block';
+                modal.style.animation = 'modalFadeIn .3s ease-in';
+            });
+
+            /* Modal bezaras */
+            let modalClosers = document.querySelectorAll('.modal__close');
+            let modal = document.querySelector('.modal');
+            for (let i = 0; i < modalClosers.length; i += 1) {
+                modalClosers[i].addEventListener('click', () => {
+                    modal.style.display = 'none';
+
+                    document.body.style.backgroundColor = '#fff';
+                })
+            };
+        </script>
+    </body>
+
+</html>
